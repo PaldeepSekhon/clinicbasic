@@ -66,28 +66,48 @@ public class Profile implements Comparable<Profile> {
 
     // Testbed main() method
     public static void main(String[] args) {
-        // Create some Date objects for testing
-        Date dob1 = new Date(1989, 12, 13);
-        Date dob2 = new Date(1990, 7, 21);
-        Date dob3 = new Date(1985, 3, 5);
+        // Date objects for the profiles
+        Date dob1 = new Date(1995, 5, 15);
+        Date dob2 = new Date(1995, 5, 14);
+        Date dob3 = new Date(1995, 5, 16);
+        Date dob4 = new Date(1990, 8, 22);
 
-        // Create some Profile objects for testing
-        Profile profile1 = new Profile("John", "Doe", dob1);
-        Profile profile2 = new Profile("John", "Doe", dob2);
-        Profile profile3 = new Profile("Jane", "Doe", dob1);
-        Profile profile4 = new Profile("Alice", "Smith", dob3);
+        // Profiles for testing
+        Profile profile1 = new Profile("Alice", "Baker", dob1);
+        Profile profile2 = new Profile("Bob", "Baker", dob1);   // Test Case 1 & 4
+        Profile profile3 = new Profile("Alice", "Adams", dob1); // Test Case 2 & 5
+        Profile profile4 = new Profile("Alice", "Baker", dob2); // Test Case 3 & 6
+        Profile profile5 = new Profile("Alice", "Baker", dob3); // Test Case 6
+        Profile profile6 = new Profile("Charlie", "Davis", dob4); // Test Case 7
 
-        // Test the equals() method
+        // Test Case 1: compareTo() returns -1 (first name comparison)
+        System.out.println("Test Case 1 - Profile1 compared to Profile2: " + profile1.compareTo(profile2)); // Should print -1
+
+        // Test Case 2: compareTo() returns -1 (last name comparison)
+        System.out.println("Test Case 2 - Profile1 compared to Profile3: " + profile1.compareTo(profile3)); // Should print -1
+
+        // Test Case 3: compareTo() returns -1 (date of birth comparison)
+        System.out.println("Test Case 3 - Profile4 compared to Profile1: " + profile4.compareTo(profile1)); // Should print -1
+
+        // Test Case 4: compareTo() returns 1 (first name comparison)
+        System.out.println("Test Case 4 - Profile2 compared to Profile1: " + profile2.compareTo(profile1)); // Should print 1
+
+        // Test Case 5: compareTo() returns 1 (last name comparison)
+        System.out.println("Test Case 5 - Profile1 compared to Profile3: " + profile3.compareTo(profile1)); // Should print 1
+
+        // Test Case 6: compareTo() returns 1 (date of birth comparison)
+        System.out.println("Test Case 6 - Profile5 compared to Profile1: " + profile5.compareTo(profile1)); // Should print 1
+
+        // Test Case 7: compareTo() returns 0 (profiles are identical)
+        Profile profile7 = new Profile("Charlie", "Davis", dob4);
+        System.out.println("Test Case 7 - Profile6 compared to Profile7: " + profile6.compareTo(profile7)); // Should print 0
+
+        // Testing equals() method
         System.out.println("Profile1 equals Profile2: " + profile1.equals(profile2)); // Should print false
-        System.out.println("Profile1 equals Profile3: " + profile1.equals(profile3)); // Should print false
         System.out.println("Profile1 equals Profile1: " + profile1.equals(profile1)); // Should print true
 
-        // Test the compareTo() method
-        System.out.println("Profile1 compared to Profile2: " + profile1.compareTo(profile2)); // Should print a negative number (because dob1 < dob2)
-        System.out.println("Profile1 compared to Profile3: " + profile1.compareTo(profile3)); // Should print a positive number (because "John" > "Jane")
-        System.out.println("Profile1 compared to Profile4: " + profile1.compareTo(profile4)); // Should print a negative number (because "Doe" < "Smith")
-
-        // Test the toString() method
-        System.out.println(profile1); // Should print "John Doe 12/13/1989"
+        // Testing toString() method
+        System.out.println("Profile1: " + profile1); // Should print "Alice Baker 5/15/1995"
+    
     }
 }
