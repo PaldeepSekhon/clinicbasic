@@ -42,15 +42,14 @@ public class Date implements Comparable<Date> {
     }
 
     public boolean isValid() {
-        if (month < 1 || month > 12) return false;
-        if (day < 1 || day>31)  return false;
-    
-        int[] daysInMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        if (isLeapYear()) {
-            daysInMonth[2] = 29; // February has 29 days in a leap year
-        }
-    
-        return day <= daysInMonth[month];
+        if (year < 1) return false; // Year must be positive
+        if (month < 1 || month > 12) return false; // Month must be between 1 and 12
+        
+        // Days in each month, with February adjusted for leap years
+        int[] daysInMonth = {0, 31, (isLeapYear() ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        
+        // Check if the day is within the valid range for the given month
+        return day >= 1 && day <= daysInMonth[month];
     }
     
     private boolean isLeapYear() {
