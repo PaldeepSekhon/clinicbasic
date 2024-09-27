@@ -25,7 +25,7 @@ public class Scheduler {
             if (commandLine.isEmpty()) continue;
 
             String[] tokens = commandLine.split(",");
-            String command = tokens[0].toUpperCase();
+            String command = tokens[0];
 
             switch (command) {
                 case "S":
@@ -148,6 +148,11 @@ public class Scheduler {
         });
         for (int i = 0; i < appointmentCount; i++) {
             System.out.println(appointments[i]);
+        }
+
+        if(appointmentCount==0)
+        {
+            System.out.println("The schedule calender is empty ");
         }
     }
 
