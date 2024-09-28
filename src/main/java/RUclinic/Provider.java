@@ -30,4 +30,12 @@ public enum Provider {
     public String toString() {
         return String.format("%s, %s, %s", this.name(), location, specialty);
     }
+
+    public static Provider fromString(String name) {
+        try {
+            return Provider.valueOf(name.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            return null;  // Return null if the provider does not exist
+        }
+    }
 }

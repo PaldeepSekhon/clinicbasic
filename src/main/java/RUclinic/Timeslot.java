@@ -27,4 +27,18 @@ public enum Timeslot {
             minute, 
             (hour >= 12) ? "PM" : "AM");
     }
+
+    public static Timeslot fromString(String input) {
+        try {
+            int slotNumber = Integer.parseInt(input);
+            if (slotNumber < 1 || slotNumber > Timeslot.values().length) {
+                System.out.println("Not Valid");
+                return null;  // Invalid slot number
+            }
+            return Timeslot.values()[slotNumber - 1];  // Adjust for zero-based index
+        } catch (NumberFormatException e) {
+            System.out.println("Not Valid");
+            return null;  // Input was not a valid number
+        }
+    }
 }

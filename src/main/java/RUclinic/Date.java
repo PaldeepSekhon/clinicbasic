@@ -61,6 +61,19 @@ public class Date implements Comparable<Date> {
             return year % 4 == 0;
         }
     }
+    public int getYear() {
+        return year;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    
 
     public static void main(String[] args) {
        // Test Case 1: Year set to 0 (Invalid year)

@@ -65,20 +65,85 @@ public class Scheduler {
             System.out.println("Invalid input format for scheduling.");
             return;
         }
+        
+        java.util.Calendar calendar = java.util.Calendar.getInstance();
+    int year = calendar.get(java.util.Calendar.YEAR);
+    int month = calendar.get(java.util.Calendar.MONTH) + 1; // Calendar months are 0-based
+    int day = calendar.get(java.util.Calendar.DAY_OF_MONTH);
+     
+     Date today = new Date(year, month, day);
+
+     java.util.Calendar calendar2 = java.util.Calendar.getInstance();
+     calendar2.add(java.util.Calendar.MONTH, 6);
+     int year2 = calendar2.get(java.util.Calendar.YEAR);
+    int month2 = calendar2.get(java.util.Calendar.MONTH) + 1; // Calendar months are 0-based
+    int day2 = calendar2.get(java.util.Calendar.DAY_OF_MONTH);
+    Date sixmonth = new Date(year2, month2, day2);
+
 
         
 
         Date date = parseDate(tokens[1]);
-        Timeslot timeslot = parseTimeslot(tokens[2]);
+      //  Timeslot timeslot = parseTimeslot(tokens[2]);
         Profile patientProfile = new Profile(tokens[3], tokens[4], parseDate(tokens[5]));
         Patient patient = new Patient(patientProfile);
-        Provider provider = parseProvider(tokens[6]);
+        //Provider provider = parseProvider(tokens[6]);
+
+        Provider provider = Provider.fromString(tokens[6]);
+        if (provider == null) {
+            System.out.println("Invalid provider.");
+            return;
+        }
+        Timeslot timeslot = Timeslot.fromString(tokens[2]);
+        if(timeslot==null)
+        {
+            System.out.println("invalid timeslot");
+            return;
+        }
+
+        if(!patientProfile.getDob().isValid())
+        {
+            System.out.print("Invalid Birth Date");
+            return;
+        }
+        if(patientProfile.getDob().compareTo(today)>=0)
+        {
+            System.out.print("Invalid Birth Date");
+            return;
+        }
 
         if(!date.isValid())
         {
             System.out.print("Invalid Date");
             return;
         }
+
+        if (date.compareTo(today) <= 0) {
+        System.out.println("The appointment date cannot be Today or day before today.");
+        return;
+
+        
+    }
+    if (date.compareTo(sixmonth) >= 0) {
+        System.out.println("The appointment date is not within 6 months.");
+        return;
+    }
+
+    if (isWeekend(date)) {
+        System.out.println("The appointment date falls on a weekend (Saturday or Sunday).");
+        return;
+    }
+
+
+
+   
+   
+
+   
+
+
+
+      
 
         Appointment newAppointment = new Appointment(date, timeslot, patientProfile, provider);
         for (int i = 0; i < appointmentCount; i++) {
@@ -169,6 +234,11 @@ public class Scheduler {
         for (int i = 0; i < appointmentCount; i++) {
             System.out.println(appointments[i]);
         }
+
+        if(appointmentCount==0)
+        {
+            System.out.println("The schedule calender is empty ");
+        }
     }
 
     private void printAppointmentsByLocation() {
@@ -183,6 +253,11 @@ public class Scheduler {
         });
         for (int i = 0; i < appointmentCount; i++) {
             System.out.println(appointments[i]);
+        }
+
+        if(appointmentCount==0)
+        {
+            System.out.println("The schedule calender is empty ");
         }
     }
 
@@ -230,13 +305,19 @@ public class Scheduler {
 
     private Timeslot parseTimeslot(String timeslotStr) {
         int slotNumber = Integer.parseInt(timeslotStr);
+
         return Timeslot.values()[slotNumber - 1];
     }
 
     private Provider parseProvider(String providerStr) {
         return Provider.valueOf(providerStr.toUpperCase());
     }
+
+    private boolean isWeekend(Date date) {
+        java.util.Calendar calendar = java.util.Calendar.getInstance();
+        calendar.set(date.getYear(), date.getMonth() - 1, date.getDay()); // Months are 0-based in Calendar
+        int dayOfWeek = calendar.get(java.util.Calendar.DAY_OF_WEEK);
+        return (dayOfWeek == java.util.Calendar.SATURDAY || dayOfWeek == java.util.Calendar.SUNDAY);
+    }
 }
-
-
 
