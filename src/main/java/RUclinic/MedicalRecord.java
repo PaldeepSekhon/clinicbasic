@@ -35,5 +35,13 @@ public class MedicalRecord {
     public int getSize() {
         return size;
     }
-}
 
+    public Patient findPatient(Profile profile) {
+        for (int i = 0; i < size; i++) {
+            if (patients[i].getProfile().equals(profile)) {
+                return patients[i];
+            }
+        }
+        return null; // Return null if the patient is not found
+    }
+}

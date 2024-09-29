@@ -35,7 +35,7 @@ public enum Provider {
         try {
             return Provider.valueOf(name.toUpperCase());
         } catch (IllegalArgumentException e) {
-            return null;  // Return null if the provider does not exist
+            return null; // Return null if the provider does not exist
         }
     }
 }

@@ -1,0 +1,169 @@
+Scheduler is running.
+
+Invalid command!
+Invalid command!
+Invalid command!
+Invalid command!
+Invalid command!
+Invalid command!
+Invalid command!
+Invalid command!
+The schedule calendar is empty.
+The schedule calendar is empty.
+The schedule calendar is empty.
+Appointment date: 9/31/2024 is not a valid calendar date.
+Appointment date: 13/30/2024 is not a valid calendar date.
+Appointment date: 0/30/2024 is not a valid calendar date.
+Appointment date: 9/0/2024 is not a valid calendar date.
+Appointment date: 2/30/2024 is not a valid calendar date.
+Appointment date: 2/29/2024 is today or a date before today.
+Appointment date: 11/2/2024 is Saturday or Sunday.
+Appointment date: 10/27/2024 is Saturday or Sunday.
+Appointment date: 5/30/2025 is not within six months.
+2/28/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY] booked.
+2/3/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY] booked.
+Appointment date: 4/11/2025 is not within six months.
+3/3/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY] booked.
+0 is not a valid time slot.
+A is not a valid time slot.
+8 is not a valid time slot.
+Patient dob: 12/32/1989 is not a valid calendar date.
+Patient dob: 1/0/1989 is not a valid calendar date.
+Patient dob: 0/31/1989 is not a valid calendar date.
+Patient dob: 13/31/1989 is not a valid calendar date.
+Patient dob: 2/29/1989 is not a valid calendar date.
+Patient dob: 12/31/2024 is today or a date after today.
+10/30/2024 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY] booked.
+John Doe 12/13/1989 has an existing appointment at the same time slot.
+Chang - provider doesn't exist.
+[PATEL, BRIDGEWATER, Somerset 08807, FAMILY] is not available at slot 1.
+10/30/2024 10:45 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY] booked.
+11/5/2024 11:15 AM John Doe 12/13/1989 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN] booked.
+11/5/2024 11:15 AM John Doe 1/13/1985 [CERAVOLO, EDISON, Middlesex 08817, PEDIATRICIAN] booked.
+12/11/2024 1:30 PM Jane Doe 5/1/1996 [ZIMNES, CLARK, Union 07066, FAMILY] booked.
+12/11/2024 3:00 PM April March 1/20/2003 [HARPER, CLARK, Union 07066, FAMILY] booked.
+1/17/2025 4:15 PM Duke Ellington 1/20/2003 [KAUR, PRINCETON, Mercer 08542, ALLERGIST] booked.
+2/11/2025 10:45 AM Roy Brook 2/29/2004 [TAYLOR, PISCATAWAY, Middlesex 08854, PEDIATRICIAN] booked.
+2/11/2025 11:15 AM Carl Brown 8/8/1999 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST] booked.
+2/11/2025 3:00 PM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST] booked.
+10/29/2024 3:00 PM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST] booked.
+12/30/2024 9:00 AM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST] booked.
+12/2/2024 1:30 PM Paul Siegel 5/1/2000 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN] booked.
+12/16/2024 11:15 AM Jane Doe 5/1/1996 [KAUR, PRINCETON, Mercer 08542, ALLERGIST] booked.
+10/30/2024 3:00 PM April March 1/20/2003 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY] booked.
+11/5/2024 11:15 AM Kate Lindsey 7/15/2002 [HARPER, CLARK, Union 07066, FAMILY] booked.
+
+** Appointments ordered by date/time/provider **
+10/29/2024 3:00 PM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+10/30/2024 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+10/30/2024 10:45 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+10/30/2024 3:00 PM April March 1/20/2003 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+11/5/2024 11:15 AM John Doe 1/13/1985 [CERAVOLO, EDISON, Middlesex 08817, PEDIATRICIAN]
+11/5/2024 11:15 AM Kate Lindsey 7/15/2002 [HARPER, CLARK, Union 07066, FAMILY]
+11/5/2024 11:15 AM John Doe 12/13/1989 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN]
+12/2/2024 1:30 PM Paul Siegel 5/1/2000 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN]
+12/11/2024 1:30 PM Jane Doe 5/1/1996 [ZIMNES, CLARK, Union 07066, FAMILY]
+12/11/2024 3:00 PM April March 1/20/2003 [HARPER, CLARK, Union 07066, FAMILY]
+12/16/2024 11:15 AM Jane Doe 5/1/1996 [KAUR, PRINCETON, Mercer 08542, ALLERGIST]
+12/30/2024 9:00 AM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+1/17/2025 4:15 PM Duke Ellington 1/20/2003 [KAUR, PRINCETON, Mercer 08542, ALLERGIST]
+2/3/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+2/11/2025 10:45 AM Roy Brook 2/29/2004 [TAYLOR, PISCATAWAY, Middlesex 08854, PEDIATRICIAN]
+2/11/2025 11:15 AM Carl Brown 8/8/1999 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+2/11/2025 3:00 PM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+2/28/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+3/3/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+** end of list **
+
+** Appointments ordered by patient/date/time **
+2/11/2025 10:45 AM Roy Brook 2/29/2004 [TAYLOR, PISCATAWAY, Middlesex 08854, PEDIATRICIAN]
+2/11/2025 11:15 AM Carl Brown 8/8/1999 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+12/11/2024 1:30 PM Jane Doe 5/1/1996 [ZIMNES, CLARK, Union 07066, FAMILY]
+12/16/2024 11:15 AM Jane Doe 5/1/1996 [KAUR, PRINCETON, Mercer 08542, ALLERGIST]
+11/5/2024 11:15 AM John Doe 1/13/1985 [CERAVOLO, EDISON, Middlesex 08817, PEDIATRICIAN]
+10/30/2024 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+10/30/2024 10:45 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+11/5/2024 11:15 AM John Doe 12/13/1989 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN]
+2/3/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+2/28/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+3/3/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+1/17/2025 4:15 PM Duke Ellington 1/20/2003 [KAUR, PRINCETON, Mercer 08542, ALLERGIST]
+11/5/2024 11:15 AM Kate Lindsey 7/15/2002 [HARPER, CLARK, Union 07066, FAMILY]
+10/30/2024 3:00 PM April March 1/20/2003 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+12/11/2024 3:00 PM April March 1/20/2003 [HARPER, CLARK, Union 07066, FAMILY]
+10/29/2024 3:00 PM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+12/2/2024 1:30 PM Paul Siegel 5/1/2000 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN]
+12/30/2024 9:00 AM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+2/11/2025 3:00 PM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+** end of list **
+
+** Appointments ordered by county/date/time **
+12/16/2024 11:15 AM Jane Doe 5/1/1996 [KAUR, PRINCETON, Mercer 08542, ALLERGIST]
+1/17/2025 4:15 PM Duke Ellington 1/20/2003 [KAUR, PRINCETON, Mercer 08542, ALLERGIST]
+11/5/2024 11:15 AM John Doe 1/13/1985 [CERAVOLO, EDISON, Middlesex 08817, PEDIATRICIAN]
+2/11/2025 10:45 AM Roy Brook 2/29/2004 [TAYLOR, PISCATAWAY, Middlesex 08854, PEDIATRICIAN]
+10/29/2024 3:00 PM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+12/30/2024 9:00 AM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+2/11/2025 11:15 AM Carl Brown 8/8/1999 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+2/11/2025 3:00 PM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+10/30/2024 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+10/30/2024 10:45 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+10/30/2024 3:00 PM April March 1/20/2003 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+11/5/2024 11:15 AM John Doe 12/13/1989 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN]
+12/2/2024 1:30 PM Paul Siegel 5/1/2000 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN]
+2/3/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+2/28/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+3/3/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+11/5/2024 11:15 AM Kate Lindsey 7/15/2002 [HARPER, CLARK, Union 07066, FAMILY]
+12/11/2024 1:30 PM Jane Doe 5/1/1996 [ZIMNES, CLARK, Union 07066, FAMILY]
+12/11/2024 3:00 PM April March 1/20/2003 [HARPER, CLARK, Union 07066, FAMILY]
+** end of list **
+12/11/2024 1:30 PM Jane Doe 5/1/1996 has been canceled.
+12/11/2024 1:30 PM Jane Doe 5/1/1996 does not exist.
+12/11/2024 1:30 PM Jane Doe 5/1/1996 [TAYLOR, PISCATAWAY, Middlesex 08854, PEDIATRICIAN] booked.
+10/29/2024 3:00 PM Paul Siegel 5/1/2000 has been canceled.
+10/29/2024 3:00 PM Paul Siegel 5/1/2000 does not exist.
+10/29/2024 3:00 PM Paul Siegel 5/1/2000 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN] booked.
+12/11/2024 3:00 PM Jane Doe 5/1/1996 does not exist.
+7 is not a valid time slot.
+Rescheduled to 12/11/2024 10:45 AM Jane Doe 5/1/1996 [TAYLOR, PISCATAWAY, Middlesex 08854, PEDIATRICIAN]
+12/11/2024 1:30 PM Jane Doe 5/1/1996 does not exist.
+[PATEL, BRIDGEWATER, Somerset 08807, FAMILY] is not available at slot 1.
+Rescheduled to 10/30/2024 1:30 PM April March 1/20/2003 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+10/30/2024 3:00 PM April March 1/20/2003 does not exist.
+
+** Appointments ordered by county/date/time **
+12/16/2024 11:15 AM Jane Doe 5/1/1996 [KAUR, PRINCETON, Mercer 08542, ALLERGIST]
+1/17/2025 4:15 PM Duke Ellington 1/20/2003 [KAUR, PRINCETON, Mercer 08542, ALLERGIST]
+11/5/2024 11:15 AM John Doe 1/13/1985 [CERAVOLO, EDISON, Middlesex 08817, PEDIATRICIAN]
+12/11/2024 10:45 AM Jane Doe 5/1/1996 [TAYLOR, PISCATAWAY, Middlesex 08854, PEDIATRICIAN]
+2/11/2025 10:45 AM Roy Brook 2/29/2004 [TAYLOR, PISCATAWAY, Middlesex 08854, PEDIATRICIAN]
+12/30/2024 9:00 AM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+2/11/2025 11:15 AM Carl Brown 8/8/1999 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+2/11/2025 3:00 PM Paul Siegel 5/1/2000 [RAMESH, MORRISTOWN, Morris 07960, ALLERGIST]
+10/29/2024 3:00 PM Paul Siegel 5/1/2000 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN]
+10/30/2024 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+10/30/2024 10:45 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+10/30/2024 1:30 PM April March 1/20/2003 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+11/5/2024 11:15 AM John Doe 12/13/1989 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN]
+12/2/2024 1:30 PM Paul Siegel 5/1/2000 [LIM, BRIDGEWATER, Somerset 08807, PEDIATRICIAN]
+2/3/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+2/28/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+3/3/2025 9:00 AM John Doe 12/13/1989 [PATEL, BRIDGEWATER, Somerset 08807, FAMILY]
+11/5/2024 11:15 AM Kate Lindsey 7/15/2002 [HARPER, CLARK, Union 07066, FAMILY]
+12/11/2024 3:00 PM April March 1/20/2003 [HARPER, CLARK, Union 07066, FAMILY]
+** end of list **
+
+** Billing statement ordered by patient **
+(1) Roy Brook 2/29/2004 [amount due: $300.00]
+(2) Carl Brown 8/8/1999 [amount due: $350.00]
+(3) Jane Doe 5/1/1996 [amount due: $650.00]
+(4) John Doe 1/13/1985 [amount due: $300.00]
+(5) John Doe 12/13/1989 [amount due: $1,550.00]
+(6) Duke Ellington 1/20/2003 [amount due: $350.00]
+(7) Kate Lindsey 7/15/2002 [amount due: $250.00]
+(8) April March 1/20/2003 [amount due: $500.00]
+(9) Paul Siegel 5/1/2000 [amount due: $1,300.00]
+** end of list **
+The schedule calendar is empty.
+Scheduler is terminated.

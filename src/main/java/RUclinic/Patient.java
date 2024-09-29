@@ -14,18 +14,22 @@ public class Patient implements Comparable<Patient> {
     public int charge() {
         int totalCharge = 0;
         Visit currentVisit = visits;
+
         while (currentVisit != null) {
             totalCharge += currentVisit.getAppointment().getProvider().getSpecialty().getCharge();
             currentVisit = currentVisit.getNext();
         }
+
         return totalCharge;
     }
 
     // Override equals() method
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
         Patient patient = (Patient) obj;
         return profile.equals(patient.profile);
     }
@@ -49,14 +53,52 @@ public class Patient implements Comparable<Patient> {
         } else {
             Visit current = visits;
             while (current.getNext() != null) {
+                // Check for duplicate appointment before adding
+                if (current.getAppointment().equals(visit.getAppointment())) {
+                    return; // Duplicate visit found, do not add
+                }
                 current = current.getNext();
             }
-            current.setNext(visit);
+            // Ensure to check the last visit before adding the new one
+            if (!current.getAppointment().equals(visit.getAppointment())) {
+                current.setNext(visit);
+            }
+        }
+    }
+
+    // Method to remove a visit corresponding to a canceled appointment
+    public void removeVisit(Appointment appointment) {
+        Visit current = visits;
+        Visit previous = null;
+
+        // Traverse the visit list to find the matching appointment
+        while (current != null) {
+            if (current.getAppointment().equals(appointment)) {
+                if (previous == null) {
+                    visits = current.getNext(); // Remove first visit
+                } else {
+                    previous.setNext(current.getNext()); // Remove current visit
+                }
+                current = null; // Explicitly nullify current to help garbage collection
+                return;
+            }
+            previous = current;
+            current = current.getNext();
         }
     }
 
     // Getter for profile (if needed)
     public Profile getProfile() {
         return profile;
+    }
+
+    // Getter for visits (for access in the cancellation logic)
+    public Visit getVisits() {
+        return visits;
+    }
+
+    // Setter for visits (to update the head of the visit list if needed)
+    public void setVisits(Visit visits) {
+        this.visits = visits;
     }
 }

@@ -1,0 +1,14 @@
+# Ignore compiled class files
+*.class
+
+# Ignore IDE-specific files
+.idea/
+*.iml
+
+# Ignore Maven/Gradle directories
+target/
+build/
+
+# Ignore logs and temporary files
+*.log
+*.tmp

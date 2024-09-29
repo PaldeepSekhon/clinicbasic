@@ -1,8 +1,8 @@
 package RUclinic;
 
 public class List {
-    private Appointment[] appointments;   
-    private int size; //number of appointments in the array
+    private Appointment[] appointments;
+    private int size; // number of appointments in the array
     private static final int NOT_FOUND = -1;
     private static final int INITIAL_CAPACITY = 4;
 
@@ -96,9 +96,11 @@ public class List {
     private void sortByLocation() {
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - 1 - i; j++) {
-                if (appointments[j].getProvider().getLocation().compareTo(appointments[j + 1].getProvider().getLocation()) > 0) {
+                if (appointments[j].getProvider().getLocation()
+                        .compareTo(appointments[j + 1].getProvider().getLocation()) > 0) {
                     swap(j, j + 1);
-                } else if (appointments[j].getProvider().getLocation().compareTo(appointments[j + 1].getProvider().getLocation()) == 0 &&
+                } else if (appointments[j].getProvider().getLocation()
+                        .compareTo(appointments[j + 1].getProvider().getLocation()) == 0 &&
                         appointments[j].getDate().compareTo(appointments[j + 1].getDate()) > 0) {
                     swap(j, j + 1);
                 }

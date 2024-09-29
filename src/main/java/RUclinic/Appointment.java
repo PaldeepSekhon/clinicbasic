@@ -17,12 +17,14 @@ public class Appointment implements Comparable<Appointment> {
     // Override equals() method
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
         Appointment that = (Appointment) obj;
         return date.equals(that.date) &&
-               timeslot.equals(that.timeslot) &&
-               patient.equals(that.patient);
+                timeslot.equals(that.timeslot) &&
+                patient.equals(that.patient); // Compare the patient profiles using the equals() method of Profile
     }
 
     // Override compareTo() method
@@ -45,11 +47,11 @@ public class Appointment implements Comparable<Appointment> {
     // Override toString() method
     @Override
     public String toString() {
-        return String.format("%s %s %s [%s]", 
-            date, 
-            timeslot, 
-            patient, 
-            provider);
+        return String.format("%s %s %s [%s]",
+                date,
+                timeslot,
+                patient,
+                provider);
     }
 
     // Getters (optional, in case you need to access the fields externally)

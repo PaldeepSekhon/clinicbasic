@@ -1,6 +1,5 @@
 package RUclinic;
 
-
 public enum Specialty {
     FAMILY(250),
     PEDIATRICIAN(300),
@@ -20,5 +19,8 @@ public enum Specialty {
     public String toString() {
         return this.name() + " - $" + charge;
     }
-}
 
+    public String getNameOnly() {
+        return this.name();
+    }
+}
