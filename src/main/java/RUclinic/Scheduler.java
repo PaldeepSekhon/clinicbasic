@@ -348,6 +348,8 @@ public class Scheduler {
 
         System.out.printf("(%d) %s [amount due: $%,.2f]%n", count, currentPatient, totalAmountDue);
         System.out.println("** end of list **");
+
+        appointmentList.clear();
     }
 
     private int calculateCharge(Specialty specialty) {
