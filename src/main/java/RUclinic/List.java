@@ -108,6 +108,14 @@ public class List {
                         appointments[j].getDate().compareTo(appointments[j + 1].getDate()) > 0) {
                     swap(j, j + 1);
                 }
+                  // If location and date are the same, compare by time
+            else if (appointments[j].getProvider().getLocation()
+            .compareTo(appointments[j + 1].getProvider().getLocation()) == 0 &&
+            appointments[j].getDate().compareTo(appointments[j + 1].getDate()) == 0 &&
+            appointments[j].getTimeslot().compareTo(appointments[j + 1].getTimeslot()) > 0) {
+            swap(j, j + 1);
+    }
+
             }
         }
     }
