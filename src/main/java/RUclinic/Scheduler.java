@@ -46,7 +46,7 @@ public class Scheduler {
                     }
                     break;
                 case "PP":
-                    if (appointmentList.size() > 0) {
+                    if (appointmentList!=null&&appointmentList.size() > 0) {
                         System.out.println();
                         System.out.println("** Appointments ordered by patient/date/time **");
                         appointmentList.sortByPatient();
@@ -349,7 +349,7 @@ public class Scheduler {
         System.out.printf("(%d) %s [amount due: $%,.2f]%n", count, currentPatient, totalAmountDue);
         System.out.println("** end of list **");
 
-        appointmentList.clear();
+        appointmentList = null;
     }
 
     private int calculateCharge(Specialty specialty) {
