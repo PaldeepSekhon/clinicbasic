@@ -61,7 +61,7 @@ public class Scheduler {
                 case "PL":
                     if (appointmentList.size() > 0) {
                         System.out.println();
-                        System.out.println("** Appointments ordered by country/date/time **");
+                        System.out.println("** Appointments ordered by county/date/time **");
                         appointmentList.sortByLocation();
                         for (int i = 0; i < appointmentList.size(); i++) {
                             System.out.println(appointmentList.get(i).toString());
