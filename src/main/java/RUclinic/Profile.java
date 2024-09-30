@@ -1,5 +1,9 @@
-package RUclinic;
+package ruclinic;
 
+/**
+ * @author Paldeep Sekhon
+ * @author Aditya Ponni
+ */
 public class Profile implements Comparable<Profile> {
     private String fname;
     private String lname;

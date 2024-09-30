@@ -1,4 +1,9 @@
-package RUclinic;
+package ruclinic;
+
+/**
+ * @author Paldeep Sekhon
+ * @author Aditya Ponni
+ */
 
 import java.util.Calendar;
 import java.util.Scanner;
@@ -46,7 +51,7 @@ public class Scheduler {
                     }
                     break;
                 case "PP":
-                    if (appointmentList!=null&&appointmentList.size() > 0) {
+                    if (appointmentList != null && appointmentList.size() > 0) {
                         System.out.println();
                         System.out.println("** Appointments ordered by patient/date/time **");
                         appointmentList.sortByPatient();
@@ -157,7 +162,7 @@ public class Scheduler {
         }
         // check if date is within next 6 months
         if (appointmentCal.after(sixMonths)) {
-            System.out.println("Appointment date: " + appointmentDate.toString() + " is not within next six months.");
+            System.out.println("Appointment date: " + appointmentDate.toString() + " is not within six months.");
             return;
         }
 

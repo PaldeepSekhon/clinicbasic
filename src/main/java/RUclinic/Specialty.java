@@ -1,5 +1,9 @@
-package RUclinic;
+package ruclinic;
 
+/**
+ * @author Paldeep Sekhon
+ * @author Aditya Ponni
+ */
 public enum Specialty {
     FAMILY(250),
     PEDIATRICIAN(300),

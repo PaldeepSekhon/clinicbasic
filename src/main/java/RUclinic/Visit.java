@@ -1,5 +1,8 @@
-package RUclinic;
+package ruclinic;
 
+/**
+ * @author Paldeep Sekhon
+ */
 public class Visit {
     private Appointment appointment; // a reference to an appointment object
     private Visit next; // a reference to the next visit in the list

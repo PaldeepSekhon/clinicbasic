@@ -1,16 +1,31 @@
-package RUclinic;
+package ruclinic;
 
+/**
+ * * The Patient class represents a patient in the clinic, containing a profile
+ * and a linked list of completed visits.
+ * 
+ * @author Paldeep Sekhon
+ * @author Aditya Ponni
+ */
 public class Patient implements Comparable<Patient> {
     private Profile profile;
     private Visit visits; // a linked list of visits (completed appointments)
 
-    // Constructor
+    /**
+     * Constructor to initialize a Patient object with a profile.
+     * 
+     * @param profile The profile of the patient.
+     */
     public Patient(Profile profile) {
         this.profile = profile;
         this.visits = null;
     }
 
-    // Method to compute the total charge by traversing the linked list of visits
+    /**
+     * Constructor to initialize a Patient object with a profile.
+     * 
+     * @param profile The profile of the patient.
+     */
     public int charge() {
         int totalCharge = 0;
         Visit currentVisit = visits;
@@ -23,7 +38,12 @@ public class Patient implements Comparable<Patient> {
         return totalCharge;
     }
 
-    // Override equals() method
+    /**
+     * Checks if two Patient objects are equal based on their profile.
+     * 
+     * @param obj The object to compare against.
+     * @return true if the profiles are the same, false otherwise.
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -34,19 +54,36 @@ public class Patient implements Comparable<Patient> {
         return profile.equals(patient.profile);
     }
 
-    // Override compareTo() method
+    /**
+     * Compares this patient with another patient by their profile.
+     * 
+     * @param other The other patient to compare against.
+     * @return A negative integer, zero, or a positive integer as this patient is
+     *         less than, equal to, or greater than the other.
+     */
     @Override
     public int compareTo(Patient other) {
         return this.profile.compareTo(other.profile);
     }
 
-    // Override toString() method
+    /**
+     * Returns a string representation of the patient's profile.
+     * 
+     * @return A string containing the patient's profile.
+     */
+
     @Override
     public String toString() {
         return profile.toString();
     }
 
-    // Method to add a visit to the linked list of visits
+    /**
+     * Adds a visit to the linked list of visits. If the visit already exists, it
+     * will not be added.
+     * 
+     * @param visit The visit to be added to the list.
+     */
+
     public void addVisit(Visit visit) {
         if (visits == null) {
             visits = visit;
@@ -66,7 +103,11 @@ public class Patient implements Comparable<Patient> {
         }
     }
 
-    // Method to remove a visit corresponding to a canceled appointment
+    /**
+     * Removes a visit corresponding to a canceled appointment from the linked list.
+     * 
+     * @param appointment The appointment to be removed.
+     */
     public void removeVisit(Appointment appointment) {
         Visit current = visits;
         Visit previous = null;
@@ -87,17 +128,29 @@ public class Patient implements Comparable<Patient> {
         }
     }
 
-    // Getter for profile (if needed)
+    /**
+     * Gets the patient's profile.
+     * 
+     * @return The patient's profile.
+     */
     public Profile getProfile() {
         return profile;
     }
 
-    // Getter for visits (for access in the cancellation logic)
+    /**
+     * Gets the linked list of visits for the patient.
+     * 
+     * @return The linked list of visits.
+     */
     public Visit getVisits() {
         return visits;
     }
 
-    // Setter for visits (to update the head of the visit list if needed)
+    /**
+     * Sets the linked list of visits for the patient.
+     * 
+     * @param visits The linked list of visits to be set.
+     */
     public void setVisits(Visit visits) {
         this.visits = visits;
     }

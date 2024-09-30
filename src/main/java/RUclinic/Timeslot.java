@@ -1,5 +1,9 @@
-package RUclinic;
+package ruclinic;
 
+/**
+ * @author Paldeep Sekhon
+ * @author Aditya Ponni
+ */
 public enum Timeslot {
 
     SLOT1(9, 0),
