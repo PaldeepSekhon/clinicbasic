@@ -16,8 +16,23 @@ public enum Location {
         this.zip = zip;
     }
 
+    // Getter for the city (name of the enum)
+    public String getCity() {
+        return this.name();
+    }
+
+    // Getter for the county
+    public String getCounty() {
+        return county;
+    }
+
+    // Getter for the zip
+    public String getZip() {
+        return zip;
+    }
+
     @Override
     public String toString() {
-        return county + " " + zip;
+        return String.format("%s, %s %s", this.name(), county, zip); // Output: CITY, COUNTY ZIP
     }
 }

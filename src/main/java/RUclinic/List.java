@@ -54,32 +54,22 @@ public class List {
         }
     }
 
-    // Print appointments ordered by patient profile, then by date/timeslot
-    public void printByPatient() {
-        sortByPatient();
-        for (int i = 0; i < size; i++) {
-            System.out.println(appointments[i].toString());
-        }
+    // Method to get the size of the list (number of appointments)
+    public int size() {
+        return size;
     }
 
-    // Print appointments ordered by location, then by date/timeslot
-    public void printByLocation() {
-        sortByLocation();
-        for (int i = 0; i < size; i++) {
-            System.out.println(appointments[i].toString());
-        }
-    }
-
-    // Print appointments ordered by date/timeslot, then provider name
-    public void printByAppointment() {
-        sortByAppointment();
-        for (int i = 0; i < size; i++) {
-            System.out.println(appointments[i].toString());
+    // Method to retrieve an appointment at a given index
+    public Appointment get(int index) {
+        if (index >= 0 && index < size) {
+            return appointments[index];
+        } else {
+            throw new IndexOutOfBoundsException("Index out of bounds.");
         }
     }
 
     // Sort appointments by patient profile, then by date/timeslot
-    private void sortByPatient() {
+    public void sortByPatient() {
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - 1 - i; j++) {
                 if (appointments[j].getPatient().compareTo(appointments[j + 1].getPatient()) > 0) {
@@ -92,8 +82,22 @@ public class List {
         }
     }
 
-    // Sort appointments by location, then by date/timeslot
-    private void sortByLocation() {
+    // Sort appointments by date/timeslot, then provider name
+    public void sortByAppointment() {
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - 1 - i; j++) {
+                if (appointments[j].getDate().compareTo(appointments[j + 1].getDate()) > 0) {
+                    swap(j, j + 1);
+                } else if (appointments[j].getDate().compareTo(appointments[j + 1].getDate()) == 0 &&
+                        appointments[j].getTimeslot().compareTo(appointments[j + 1].getTimeslot()) > 0) {
+                    swap(j, j + 1);
+                }
+            }
+        }
+    }
+
+    // Sort appointments by provider location, then by date/timeslot
+    public void sortByLocation() {
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - 1 - i; j++) {
                 if (appointments[j].getProvider().getLocation()
@@ -102,20 +106,6 @@ public class List {
                 } else if (appointments[j].getProvider().getLocation()
                         .compareTo(appointments[j + 1].getProvider().getLocation()) == 0 &&
                         appointments[j].getDate().compareTo(appointments[j + 1].getDate()) > 0) {
-                    swap(j, j + 1);
-                }
-            }
-        }
-    }
-
-    // Sort appointments by date/timeslot, then provider name
-    private void sortByAppointment() {
-        for (int i = 0; i < size - 1; i++) {
-            for (int j = 0; j < size - 1 - i; j++) {
-                if (appointments[j].getDate().compareTo(appointments[j + 1].getDate()) > 0) {
-                    swap(j, j + 1);
-                } else if (appointments[j].getDate().compareTo(appointments[j + 1].getDate()) == 0 &&
-                        appointments[j].getProvider().compareTo(appointments[j + 1].getProvider()) > 0) {
                     swap(j, j + 1);
                 }
             }

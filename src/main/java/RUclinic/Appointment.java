@@ -14,7 +14,7 @@ public class Appointment implements Comparable<Appointment> {
         this.provider = provider;
     }
 
-    // Override equals() method
+    // Override equals() method to compare all fields
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -24,10 +24,11 @@ public class Appointment implements Comparable<Appointment> {
         Appointment that = (Appointment) obj;
         return date.equals(that.date) &&
                 timeslot.equals(that.timeslot) &&
-                patient.equals(that.patient); // Compare the patient profiles using the equals() method of Profile
+                patient.equals(that.patient) &&
+                provider.equals(that.provider); // Compare the provider as well
     }
 
-    // Override compareTo() method
+    // Override compareTo() method for sorting by date, then timeslot, then patient
     @Override
     public int compareTo(Appointment other) {
         // First compare by date
@@ -44,17 +45,24 @@ public class Appointment implements Comparable<Appointment> {
         return this.patient.compareTo(other.patient);
     }
 
-    // Override toString() method
+    // Override toString() method for output in the desired format
     @Override
     public String toString() {
-        return String.format("%s %s %s [%s]",
-                date,
-                timeslot,
-                patient,
-                provider);
+        return String.format("%s %s %s %s %s [%s, %s, %s %s, %s]",
+                this.date, // Appointment date
+                this.timeslot, // Timeslot
+                this.patient.getFname(), // Patient's first name
+                this.patient.getLname(), // Patient's last name
+                this.patient.getDob(), // Patient's date of birth
+                this.provider.name(), // Provider's name
+                this.provider.getLocation().getCity(), // Provider's location city
+                this.provider.getLocation().getCounty(), // Provider's location county
+                this.provider.getLocation().getZip(), // Provider's location ZIP code
+                this.provider.getSpecialty().getNameOnly() // Provider's specialty (without price)
+        );
     }
 
-    // Getters (optional, in case you need to access the fields externally)
+    // Getters for accessing fields in the Scheduler class
     public Date getDate() {
         return date;
     }
@@ -69,5 +77,16 @@ public class Appointment implements Comparable<Appointment> {
 
     public Provider getProvider() {
         return provider;
+    }
+
+    // Setter for Timeslot to allow rescheduling
+    public void setTimeSlot(Timeslot timeslot) {
+        this.timeslot = timeslot;
+    }
+
+    // Additional setter in case you want to update provider or other fields (if
+    // needed)
+    public void setProvider(Provider provider) {
+        this.provider = provider;
     }
 }
