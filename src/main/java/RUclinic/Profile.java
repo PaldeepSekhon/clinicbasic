@@ -1,6 +1,9 @@
 package ruclinic;
 
 /**
+ * Class representing a profile with first name, last name, and date of birth.
+ * Implements Comparable to allow comparison between profiles based on last name, first name, and date of birth.
+ * 
  * @author Paldeep Sekhon
  * @author Aditya Ponni
  */
@@ -9,14 +12,25 @@ public class Profile implements Comparable<Profile> {
     private String lname;
     private Date dob;
 
-    // Constructor
+    /**
+     * Constructor for the Profile class.
+     * 
+     * @param fname First name of the person.
+     * @param lname Last name of the person.
+     * @param dob   Date of birth of the person.
+     */
     public Profile(String fname, String lname, Date dob) {
         this.fname = fname;
         this.lname = lname;
         this.dob = dob;
     }
 
-    // Override equals() method
+     /**
+     * Overrides the equals() method to check if two profiles are equal based on first name, last name, and date of birth.
+     * 
+     * @param obj The object to compare with.
+     * @return true if the profiles are equal, false otherwise.
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -31,7 +45,13 @@ public class Profile implements Comparable<Profile> {
                 dob.equals(profile.dob);
     }
 
-    // Override compareTo() method
+     /**
+    * Implements the compareTo() method for comparing two profiles.
+    * Comparison is done based on last name, then first name, and then date of birth.
+    * 
+    * @param other The profile to compare with.
+    * @return A negative number if this profile is less, zero if equal, or a positive number if greater.
+    */
     @Override
     public int compareTo(Profile other) {
         int lastNameComparison = this.lname.compareTo(other.lname);
@@ -47,25 +67,47 @@ public class Profile implements Comparable<Profile> {
         return this.dob.compareTo(other.dob);
     }
 
-    // Override toString() method
+    /**
+     * Overrides the toString() method to provide a formatted string representation of the profile.
+     * 
+     * @return A string in the format "FirstName LastName DateOfBirth".
+     */
     @Override
     public String toString() {
         return String.format("%s %s %s", fname, lname, dob);
     }
-
+     
+     /**
+     * Getter method for first name
+     * 
+     * @return A string first name.
+     */
     public String getFname() {
         return fname;
     }
-
+    /**
+     * Getter method for last name
+     * 
+     * @return A string last name.
+     */
     public String getLname() {
         return lname;
     }
-
+    /**
+     * Getter method for date of birth 
+     * 
+     * @return A date date of birth.
+     */
     public Date getDob() {
         return dob;
     }
 
-    // Testbed main() method
+     /**
+     * Main method for testing the Profile class functionality.
+     * It runs several test cases to check the behavior of compareTo(), equals(), and toString() methods.
+     * 
+     * @param args Command line arguments (not used here).
+     */
     public static void main(String[] args) {
         // Date objects for the profiles
         Date dob1 = new Date(1995, 5, 15);

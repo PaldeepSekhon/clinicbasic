@@ -1,6 +1,10 @@
 package ruclinic;
 
 /**
+ * The Scheduler class is responsible for managing appointments in the clinic.
+ * It can schedule, cancel, reschedule appointments, and print appointment lists sorted by different criteria.
+ * The scheduler also provides billing statements for patients.
+ * 
  * @author Paldeep Sekhon
  * @author Aditya Ponni
  */
@@ -10,11 +14,16 @@ import java.util.Scanner;
 
 public class Scheduler {
     private List appointmentList;
-
+      /**
+     * Constructor to initialize a Scheduler object with an empty appointment list.
+     */
     public Scheduler() {
         appointmentList = new List();
     }
-
+    /**
+     * Runs the scheduler, continuously accepting and processing user commands until the 'Q' command is entered.
+     * Commands include scheduling, canceling, rescheduling, and printing appointments or billing statements.
+     */
     public void run() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Scheduler is running.\n");
@@ -89,7 +98,11 @@ public class Scheduler {
 
         }
     }
-
+     /**
+     * Schedules an appointment based on input tokens. Validates the appointment date, provider, and time slot before adding it to the appointment list.
+     * 
+     * @param tokens The input data for the appointment to be scheduled.
+     */
     private void scheduleAppointment(String[] tokens) {
         if (tokens.length != 7) {
             System.out.println("Invalid command!");
@@ -194,6 +207,11 @@ public class Scheduler {
                 cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR);
     }
 
+     /**
+     * Cancels an existing appointment based on input tokens.
+     * 
+     * @param tokens The input data identifying the appointment to be canceled.
+     */
     private void cancelAppointment(String[] tokens) {
         if (tokens.length != 7) {
             System.out.println("Invalid command!");
@@ -224,7 +242,11 @@ public class Scheduler {
                     + " " + dob + " does not exist.");
         }
     }
-
+     /**
+     * Reschedules an existing appointment to a new time slot based on input tokens.
+     * 
+     * @param tokens The input data identifying the appointment to be rescheduled.
+     */
     private void rescheduleAppointment(String[] tokens) {
         if (tokens.length != 7) {
             System.out.println("Invalid command!");
@@ -274,7 +296,18 @@ public class Scheduler {
         appointment.setTimeSlot(Timeslot.values()[newTimeSlotIndex]);
         System.out.println("Rescheduled to " + appointment.toString());
     }
-
+    /**
+ * Validates the appointment's date, time slot, patient details, and provider.
+ * Ensures that the date and provider are valid, and checks that the time slot is within the valid range.
+ * 
+ * @param date The date of the appointment.
+ * @param timeSlot The time slot of the appointment.
+ * @param fname The first name of the patient.
+ * @param lname The last name of the patient.
+ * @param dob The date of birth of the patient.
+ * @param providerLastName The last name of the provider.
+ * @return true if the appointment details are valid, false otherwise.
+ */
     private boolean isValidAppointment(Date date, String timeSlot, String fname, String lname, Date dob,
             String providerLastName) {
         if (!date.isValid() || !dob.isValid() || !isValidProvider(providerLastName))
@@ -290,7 +323,12 @@ public class Scheduler {
 
         return true;
     }
-
+/**
+ * Validates if the provider's last name corresponds to a valid provider in the system.
+ * 
+ * @param providerLastName The last name of the provider.
+ * @return true if the provider exists, false otherwise.
+ */
     private boolean isValidProvider(String providerLastName) {
         try {
             Provider.valueOf(providerLastName.toUpperCase());
@@ -299,7 +337,17 @@ public class Scheduler {
             return false;
         }
     }
-
+/**
+ * Finds an appointment based on the input data for date, time slot, patient name, and date of birth.
+ * Searches through the appointment list to find a matching appointment.
+ * 
+ * @param date The date of the appointment.
+ * @param timeSlot The time slot of the appointment.
+ * @param fname The first name of the patient.
+ * @param lname The last name of the patient.
+ * @param dob The date of birth of the patient.
+ * @return The Appointment object if found, or null if not found.
+ */
     private Appointment findAppointment(Date date, String timeSlot, String fname, String lname, Date dob) {
         Profile patientProfile = new Profile(fname, lname, dob);
         int timeSlotIndex = Integer.parseInt(timeSlot) - 1;
@@ -313,7 +361,12 @@ public class Scheduler {
         }
         return null;
     }
-
+/**
+ * Validates if the time slot provided is within the valid range of time slots.
+ * 
+ * @param timeSlot The time slot to validate.
+ * @return true if the time slot is valid, false otherwise.
+ */
     private boolean isValidTimeSlot(String timeSlot) {
         try {
             int slot = Integer.parseInt(timeSlot);
@@ -322,7 +375,10 @@ public class Scheduler {
             return false;
         }
     }
-
+/**
+ * Prints billing statements for all patients, sorted by patient.
+ * Displays the total amount due for each patient based on the specialty of their provider.
+ */
     private void printBillingStatements() {
         appointmentList.sortByPatient();
         System.out.println();
@@ -356,7 +412,13 @@ public class Scheduler {
 
         appointmentList = null;
     }
-
+/**
+ * Calculates the charge for a given specialty.
+ * The charge is determined by the specialty of the provider.
+ * 
+ * @param specialty The specialty of the provider.
+ * @return The charge amount based on the specialty.
+ */
     private int calculateCharge(Specialty specialty) {
         switch (specialty) {
             case FAMILY:
